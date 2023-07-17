@@ -1,0 +1,59 @@
+.datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #fff;
+  font-size: 14px;
+}
+
+.date {
+  font-size: 15px;
+}
+
+.time {
+  font-size: 16px;
+}
+
+
+@media only screen and (max-width: 2200px) {
+  .datetime {
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+
+  .date {
+    font-size: 14px;
+    position: relative;
+    margin: 3rem auto 0;
+  }
+  
+  .time {
+    font-size: 15px;
+    position: relative;
+    margin: auto 9rem;
+    
+  }
+}
+
+@media only screen and (max-width: 389px) {
+  .date {
+    font-size: 11px;
+    position: relative;
+    margin: 3rem 6rem 0;
+  }
+  
+  .time {
+    font-size: 11px;
+    position: relative;
+    margin: 0rem auto 0;
+ 
+  }
+}
+
+
