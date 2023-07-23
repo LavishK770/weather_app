@@ -2,16 +2,19 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
+
 function App() {
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
 
   const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=e98f0af277526e5700abc4423ce1ba08`
-  const searchLocation = (event) => {
+    const searchLocation = (event) => {
     if (event.key === 'Enter') {
       axios.get(url).then((response) => {
         setData(response.data)
         console.log(response.data)
+        let d=new Date();
+        // console.log(d.getUtcOffsetForLocation(response.data.sys.country) )
       })
       setLocation('')
     }
@@ -20,7 +23,7 @@ function App() {
  
 
   return (
-    <div className="app">
+    <>
       <div className="search">
         <input
           value={location}
@@ -29,6 +32,7 @@ function App() {
           placeholder='Enter City'
           type="text" />
       </div>
+
       <div className="container">
         <div className="top">
           <div className="location">
@@ -62,7 +66,8 @@ function App() {
 
 
       </div>
-    </div>
+      </>
+ 
   );
 }
 
